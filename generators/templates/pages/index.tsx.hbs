@@ -1,0 +1,15 @@
+import { GetServerSideProps } from 'next'
+
+const {{pascalCase name}} = (): JSX.Element => {
+
+  return <h1>{{pascalCase name}}</h1>
+}
+
+
+export default {{pascalCase name}}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {}
+  }
+}
