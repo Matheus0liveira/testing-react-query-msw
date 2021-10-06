@@ -11,11 +11,11 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>Boilerplate VOID</title>
+        <title>Tests with React-Query and MSW</title>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="title" content="Boilerplate VOID" />
+        <meta name="title" content="Tests with React-Query and MSW" />
         <meta
           name="description"
           content="Um boilerplate criado com nextjs, typescript, stitches, pwa e muito mais"
