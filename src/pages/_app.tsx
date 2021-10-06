@@ -1,6 +1,10 @@
+import { QueryClientProvider } from 'react-query';
+
 import { globalStyles } from '@styles/defaultStyles/globalStyles';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+
+import { queryClient } from '../services/query-client';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   globalStyles();
@@ -19,7 +23,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="Portuguese" />
       </Head>
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </>
   );
 }
