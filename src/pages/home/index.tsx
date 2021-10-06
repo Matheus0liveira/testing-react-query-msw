@@ -1,7 +1,11 @@
 import { GetServerSideProps } from 'next';
 
+import { useUserQuery } from '../../services/queries';
+
 const Header = (): JSX.Element => {
-  return <h1>Header</h1>;
+  const { isLoading } = useUserQuery();
+
+  return <h1>{isLoading ? 'Loading' : 'Load'}</h1>;
 };
 
 export default Header;

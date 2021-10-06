@@ -4,10 +4,19 @@ import { globalStyles } from '@styles/defaultStyles/globalStyles';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { IS_BROWSER, IS_DEV } from '../common/constants';
 import { queryClient } from '../services/query-client';
+
+if (IS_DEV && IS_BROWSER) {
+  // eslint-disable-next-line
+  const { worker } = require('../tests/mocks/handlers/setupWorker');
+
+  worker.start();
+}
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   globalStyles();
+
   return (
     <>
       <Head>
